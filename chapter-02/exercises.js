@@ -99,14 +99,14 @@ for (let i = 0; i < x; i++) {
   var line = ''
   for (let j = 0; j < x; j++) {
     if ((i + j) % 2 === 0) {
-      row += ' '
+      line += ' '
     } else {
-      row += '#'
+      line += '#'
     }
   }
-  string += row _ '\n'
+  string += line + '\n'
 }
-
+console.log(string)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
