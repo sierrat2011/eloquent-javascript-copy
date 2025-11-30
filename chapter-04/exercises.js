@@ -108,25 +108,25 @@ if (x === y) {
   return true
 }
 else if ((typeof x == 'object' && x != null) && (typeof y == 'object' && y != null)) {
-  if (Object.keys(x).length != Object.keys(y).length) {
+  let keysX = Object.keys(x)
+  let keysY = Object.keys(y)
+
+  if (keysX.length != keysY.length) {
     return false
   }
-  for (let prop in x) {
-    if (y.hasOwnProperty(prop)) {
-      if (! deepEqual(x[prop], y[prop])) {
+
+  for (let prop of keysX) {
+
+      if (!y.hasOwnProperty(prop) || !deepEqual(x[prop], y[prop])) {
         return false
       }
-      else {
-        return false
       }
       return true
     }
-  }
-}
-else {
+
   return false
 }
-}
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
